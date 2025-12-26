@@ -64,10 +64,7 @@ export function importJsonSchema(schemaData: unknown): ImportResult {
         ? propertyType.find((t) => t !== 'array' && t !== 'null') || 'string'
         : propertyType || 'string') as DataType;
 
-      // Skip if still array or null
-      if (dataType === 'array' || dataType === 'null') {
-        return null;
-      }
+      // dataType is already filtered to exclude 'array' and 'null' above
 
       const attributeId = parentId ? `${parentId}-${name}` : `credentialSubject-${name}`;
 
@@ -131,7 +128,7 @@ export function importJsonSchema(schemaData: unknown): ImportResult {
               childProperty as Record<string, unknown>,
               attributeId
             );
-            if (childAttr) {
+            if (childAttr && attribute.children) {
               attribute.children.push(childAttr);
             }
           }
