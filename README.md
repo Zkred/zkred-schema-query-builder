@@ -1,235 +1,101 @@
-# 🪐 Google Antigravity Workspace Template
+# ZKred Schema & Query Builder
 
-**Production-grade starter kit for autonomous AI agents on Google Antigravity.**
+A web-based application for creating verifiable credential schemas and verification queries, inspired by Privado ID's schema builder and query builder.
 
-Language: [English](/docs/en/) | [中文](README_CN.md) | [Español](/docs/es/)
+## Features
 
-![License](https://img.shields.io/badge/License-MIT-green)
-![Gemini](https://img.shields.io/badge/AI-Gemini_2.0_Flash-blue)
-![Architecture](https://img.shields.io/badge/Architecture-Event_Driven-purple)
-![Memory](https://img.shields.io/badge/Context-Infinite-orange)
+### Schema Builder
+- **Step 1: Define Schema** - Configure schema metadata (title, type, version, description, credential type)
+- **Step 2: Define Attributes** - Create hierarchical attribute structure with properties
+- **Real-time JSON Schema Preview** - See your schema as you build it with syntax highlighting
+- **Attribute Management** - Add, remove, and configure attributes with validation
+- **Export Functionality** - Download your schema as JSON
 
-## 🌟 Project Intent
+### Query Builder
+- **Schema Selection** - Browse and select schemas from Privado ID or enter IPFS URLs
+- **Condition Builder** - Create complex verification queries with multiple conditions
+- **Selective Disclosure** - Choose which attributes to reveal in proofs
+- **Credential Possession** - Verify credential existence without revealing data
+- **Multiple Query Types** - Support for off-chain and on-chain verification
+- **Real-time Query Preview** - See generated queries with syntax highlighting
 
-In a world full of AI IDEs, I want enterprise-grade architecture to be as simple as **Clone → Rename → Prompt**.
+## Getting Started
 
-This project leverages IDE context awareness (via `.cursorrules` and `.antigravity/rules.md`) to pre-embed a complete **cognitive architecture** in the repo.
-
-When you open this project, your IDE stops being just an editor—it becomes an **industry-savvy architect**.
-
-**First principles:**
-
-- Minimize repetition: the repo should encode defaults so setup is nearly zero.
-- Make intent explicit: capture architecture, context, and workflows in files, not tribal knowledge.
-- Treat the IDE as a teammate: contextual rules turn the editor into a proactive architect, not a passive tool.
-
-### Why do we need a thinking scaffold?
-
-While building with Google Antigravity or Cursor, I found a pain point:
-
-**The IDE and models are powerful, but the empty project is too weak.**
-
-Every new project repeats the same boring setup:
-
-- "Should my code live in `src` or `app`?"
-- "How do I define utilities so Gemini recognizes them?"
-- "How do I help the AI remember prior context?"
-
-This repetition wastes creative energy. My ideal workflow is: **after a git clone, the IDE already knows what to do.**
-
-So I built this project: **Antigravity Workspace Template**.
-
-## ⚡ Quick Start
-
-### Automated Installation (Recommended)
-
-**Linux / macOS:**
-```bash
-# 1. Clone the template
-git clone https://github.com/study8677/antigravity-workspace-template.git my-project
-cd my-project
-
-# 2. Run the installer
-chmod +x install.sh
-./install.sh
-
-# 3. Configure your API keys
-nano .env
-
-# 4. Run the agent
-source venv/bin/activate
-python src/agent.py
-```
-
-**Windows:**
-```cmd
-# 1. Clone the template
-git clone https://github.com/study8677/antigravity-workspace-template.git my-project
-cd my-project
-
-# 2. Run the installer
-install.bat
-
-# 3. Configure your API keys (notepad .env)
-
-# 4. Run the agent
-python src/agent.py
-```
-
-### Manual Installation
+### Installation
 
 ```bash
-# 1. Clone the template
-git clone https://github.com/study8677/antigravity-workspace-template.git my-project
-cd my-project
-
-# 2. Create virtual environment
-python3 -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-
-# 3. Install dependencies
-pip install -r requirements.txt
-
-# 4. Configure your API keys
-cp .env.example .env  # (if available) or create .env manually
-nano .env
-
-# 5. Run the agent
-python src/agent.py
+npm install
 ```
 
-**That's it!** The IDE auto-loads configuration via `.cursorrules` + `.antigravity/rules.md`. You're ready to prompt.
+### Development
 
-## 🎯 What Is This?
-
-This is **not** another LangChain wrapper. It's a minimal, transparent workspace for building AI agents that:
-
-- 🧠 Have infinite memory (recursive summarization)
-- 🛠️ Auto-discover tools from `src/tools/`
-- 📚 Auto-inject context from `.context/`
-- 🔌 Connect to MCP servers seamlessly
-- 🤖 Coordinate multiple specialist agents
-- 📦 Save outputs as artifacts (plans, logs, evidence)
-
-**Clone → Rename → Prompt. That's the workflow.**
-
-## 🚀 Key Features
-
-| Feature | Description |
-|---------|-------------|
-| 🧠 **Infinite Memory** | Recursive summarization compresses context automatically |
-| 🛠️ **Universal Tools** | Drop Python functions in `src/tools/` → auto-discovered |
-| 📚 **Auto Context** | Add files to `.context/` → auto-injected into prompts |
-| 🔌 **MCP Support** | Connect GitHub, databases, filesystems, custom servers |
-| 🤖 **Swarm Agents** | Multi-agent orchestration with Router-Worker pattern |
-| ⚡ **Gemini Native** | Optimized for Gemini 2.0 Flash |
-| 🌐 **LLM Agnostic** | Use OpenAI, Azure, Ollama, or any OpenAI-compatible API |
-| 📂 **Artifact-First** | Every task produces plans, logs, and evidence |
-
-## 📚 Documentation
-
-**Full documentation available in `/docs/en/`:**
-
-- **[Quick Start](docs/en/QUICK_START.md)** — Installation & deployment
-- **[Philosophy](docs/en/PHILOSOPHY.md)** — Core concepts & architecture
-- **[Zero-Config](docs/en/ZERO_CONFIG.md)** — Auto tool & context loading
-- **[MCP Integration](docs/en/MCP_INTEGRATION.md)** — External tool connectivity
-- **[Swarm Protocol](docs/en/SWARM_PROTOCOL.md)** — Multi-agent coordination
-- **[Roadmap](docs/en/ROADMAP.md)** — Future phases & vision
-
-## 🏗️ Project Structure
-
-```
-src/
-├── agent.py           # Main agent loop
-├── memory.py          # JSON memory manager
-├── mcp_client.py      # MCP integration
-├── swarm.py           # Multi-agent orchestration
-├── agents/            # Specialist agents
-└── tools/             # Your custom tools
-
-.context/             # Knowledge base (auto-injected)
-.antigravity/         # Antigravity rules
-artifacts/            # Outputs & evidence
+```bash
+npm run dev
 ```
 
-## 💡 Example: Build a Tool in 30 Seconds
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-```python
-# src/tools/my_tool.py
-def analyze_sentiment(text: str) -> str:
-    """Analyzes the sentiment of given text."""
-    return "positive" if len(text) > 10 else "neutral"
+### Build
+
+```bash
+npm run build
+npm start
 ```
 
-**Restart agent.** Done! The tool is now available.
+## Usage
 
-## 🔌 MCP Integration
+1. **Define Schema**: Fill in the schema metadata form on the left
+   - Title, Schema Type, Version, Description
+   - Choose between Merklized (default) or Non-merklized credential types
+   - Click "Define attributes →" to proceed
 
-Connect to external tools:
+2. **Define Attributes**: 
+   - View the attribute tree on the left
+   - Select an attribute to edit its properties on the right
+   - Use "Add" to create new attributes
+   - Use "Remove" to delete selected attributes
+   - Properties auto-save as you type
 
-```json
-{
-  "servers": [
-    {
-      "name": "github",
-      "transport": "stdio",
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-github"],
-      "enabled": true
-    }
-  ]
-}
+3. **Preview**: The JSON Schema preview updates in real-time on the right panel
+
+4. **Export**: Click "Download JSON" to save your schema
+
+## Project Structure
+
+```
+schema-builder/
+├── app/
+│   ├── page.tsx              # Step 1: Define Schema
+│   ├── attributes/
+│   │   └── page.tsx          # Step 2: Define Attributes
+│   └── layout.tsx
+├── components/
+│   ├── Header.tsx
+│   ├── SchemaForm.tsx
+│   ├── AttributesTree.tsx
+│   ├── AttributeProperties.tsx
+│   └── JsonPreview.tsx
+├── lib/
+│   ├── types.ts              # TypeScript type definitions
+│   └── schema-generator.ts   # JSON Schema generation logic
+└── store/
+    └── schema-store.ts       # Zustand state management
 ```
 
-Agent automatically discovers and uses all MCP tools.
+## Technologies
 
-## 🤖 Multi-Agent Swarm
+- **Next.js 14+** (App Router)
+- **React 19**
+- **TypeScript**
+- **Tailwind CSS**
+- **Zustand** (State management)
+- **React Hook Form** (Form handling)
+- **Zod** (Validation)
+- **Lucide React** (Icons)
 
-Decompose complex tasks:
+## Notes
 
-```python
-from src.swarm import SwarmOrchestrator
-
-swarm = SwarmOrchestrator()
-result = swarm.execute("Build and review a calculator")
-```
-
-The swarm automatically:
-- 📤 Routes to Coder, Reviewer, Researcher agents
-- 🧩 Synthesizes results
-- 📂 Saves artifacts
-
-## ✅ What's Complete
-
-- ✅ Phase 1-7: Foundation, DevOps, Memory, Tools, Swarm, Discovery
-- ✅ Phase 8: MCP Integration (fully implemented)
-- 🚀 Phase 9: Enterprise Core (in progress)
-
-See [Roadmap](docs/en/ROADMAP.md) for details.
-
-## 🤝 Contributing
-
-Ideas are contributions too! Open an [issue](https://github.com/study8677/antigravity-workspace-template/issues) to:
-- Report bugs
-- Suggest features
-- Propose architecture (Phase 9)
-
-Or submit a PR to improve docs or code.
-
-## 👥 Contributors
-
-- [@devalexanderdaza](https://github.com/devalexanderdaza) — First contributor. Implemented demo tools, enhanced agent functionality, proposed the "Agent OS" roadmap, and completed MCP integration.
-- [@Subham-KRLX](https://github.com/Subham-KRLX) — Added dynamic tools and context loading (Fixes #4) and the multi-agent cluster protocol (Fixes #6).
-
-## ⭐ Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=study8677/antigravity-workspace-template&type=Date)](https://star-history.com/#study8677/antigravity-workspace-template&Date)
-
-## 📄 License
-
-MIT License. See [LICENSE](LICENSE) for details.
-
----
-
-**[Explore Full Documentation →](docs/en/)**
+- Non-merklized credentials support a maximum of 4 attributes
+- Attribute names must be alphanumeric with dashes and underscores only
+- Schema types must be alphanumeric only
+- All fields marked with * are required
